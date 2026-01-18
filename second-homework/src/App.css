@@ -1,42 +1,230 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+/* ========== RESET ========== */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Segoe UI", Tahoma, sans-serif;
+}
+
+body {
+  background: linear-gradient(135deg, #1e5799, #2989d8);
+  min-height: 100vh;
+}
+
+/* ========== PAGE ========== */
+.page {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 20px;
+}
+
+/* ========== HEADER ========== */
+.header {
+  color: white;
+  margin-bottom: 20px;
+}
+
+.header h1 span {
+  color: #ffd54f;
+}
+
+/* ========== CARD ========== */
+.card {
+  background: #f5f9ff;
+  border-radius: 12px;
+  padding: 18px;
+  margin-bottom: 20px;
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.18);
+}
+
+.cardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 14px;
+}
+
+.cardHeader h2 {
+  font-size: 18px;
+  color: #1e5799;
+}
+
+.cardBody {
+  background: #fdfefe;
+  border-radius: 10px;
+  padding: 14px;
+  border: 1px solid #e0e7f2;
+}
+
+.cardFooter {
+  margin-top: 12px;
+}
+
+/* ========== FORM ELEMENTS ========== */
+.row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+
+.row > div {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex: 1;
+}
+
+label {
+  min-width: 80px;
+  font-weight: 600;
+  color: #1e5799;
+  white-space: nowrap;
+}
+
+input,
+select {
+  flex: 1;
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  width: 100%;
+  background: #fff;
+}
+
+input::placeholder {
+  color: #999;
+}
+
+/* ========== BUTTONS ========== */
+button {
+  padding: 8px 14px;
+  border-radius: 6px;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.btn.primary {
+  background: linear-gradient(#1e88e5, #1565c0);
+  color: white;
+}
+
+.btn.primary:hover,
+.buttons button:hover {
+  opacity: 0.9;
+}
+
+/* ========== ERROR ========== */
+.error {
+  color: #e53935;
+  font-size: 13px;
+  margin-left: 92px;
+}
+
+/* ========== FILTERS ========== */
+.filters {
+  display: flex;
+  gap: 6px;
+}
+
+.filters button {
+  background: #e3ecfa;
+  color: #1e5799;
+}
+
+.filters button.active {
+  background: linear-gradient(#1e88e5, #1565c0);
+  color: white;
+}
+
+/* ========== MOVIE LIST ========== */
+.list {
+  list-style: none;
+}
+
+.item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px;
+  border-bottom: 1px dashed #ccc;
+}
+
+.itemTitle {
+  font-weight: 700;
+  color: #1e5799;
+  min-width: 160px;
+}
+
+.itemMeta {
+  font-size: 13px;
+  color: #666;
+}
+
+.itemStatus strong {
+  font-size: 13px;
+}
+
+/* ========== MOVIE ITEM BUTTONS ========== */
+.buttons {
+  display: flex;
+  gap: 6px;
+}
+
+.buttons button {
+  background: #4caf50;
+  color: white;
+}
+
+.buttons button.danger {
+  background: #e53935;
+}
+
+/* ========== EMPTY STATE ========== */
+.empty {
+  text-align: center;
+  padding: 18px;
+  color: #666;
+  font-style: italic;
+}
+
+/* ========== SUMMARY ========== */
+.summaryWrap {
+  margin-top: 20px;
+}
+
+.summary {
+  display: flex;
+  gap: 12px;
+}
+
+.summaryCard {
+  flex: 1;
+  padding: 14px;
+  border-radius: 10px;
+  color: white;
   text-align: center;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.summaryCard:nth-child(1) {
+  background: linear-gradient(#1e88e5, #1565c0);
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.summaryCard:nth-child(2) {
+  background: linear-gradient(#43a047, #2e7d32);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.summaryCard:nth-child(3) {
+  background: linear-gradient(#fb8c00, #ef6c00);
 }
 
-.card {
-  padding: 2em;
+.summaryLabel {
+  font-size: 14px;
 }
 
-.read-the-docs {
-  color: #888;
+.summaryValue {
+  font-size: 22px;
+  font-weight: bold;
+  margin-top: 6px;
 }
