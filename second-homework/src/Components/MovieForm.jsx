@@ -17,21 +17,20 @@ export default function MovieForm({ onAddMovie }) {
             return setError("Title is required");
         }
 
-        if (!category) {  // کاربر هنوز چیزی انتخاب نکرده
-            return setError("Please select a category");
+        if (!category) { 
+            return setError("Please select a genre");
         }
 
         onAddMovie({ title: cleanTitle, category });
 
         setTitle("");
-        setCategory(""); // reset to placeholder
+        setCategory(""); 
     }
 
     return (
         <div>
             <div className="row">
                 <TextInput
-                    label={"title"}
                     value={title}
                     onChange={setTitle}
                     placeholder={"Enter movie title"}
@@ -42,11 +41,11 @@ export default function MovieForm({ onAddMovie }) {
             </div>
             <div className="row">
                 <SelectInput
-                    label={"Category"}
+                    label={"Genre:"} 
                     value={category}
                     onChange={setCategory}
                     options={CATEGORIES}
-                    placeholder='Select from list'
+                    placeholder='Select Genre'
                 ></SelectInput>
             </div>
         </div>
